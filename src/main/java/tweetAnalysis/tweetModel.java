@@ -1,7 +1,6 @@
 package tweetAnalysis;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import org.apache.beam.vendor.grpc.v1p21p0.com.google.gson.annotations.SerializedName;
 
@@ -10,13 +9,13 @@ public class tweetModel implements Serializable{
      *
      */
     private static final long serialVersionUID = 1L;
-    @SerializedName("date")
-    private Date date;
+    @SerializedName("year")
+    private int year;
     @SerializedName("tweet")
     private String tweet;
 
-    public tweetModel(Date date, String tweet) {
-        this.setDate(date);
+    public tweetModel(int year, String tweet) {
+        this.setYear(year);
         this.setTweet(tweet);
     }
 
@@ -28,12 +27,12 @@ public class tweetModel implements Serializable{
         this.tweet = tweet;
     }
 
-    public Date getDate() {
-        return date;
+    public int getYear() {
+        return year;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setYear(int year) {
+        this.year = year;
     }
 
 
